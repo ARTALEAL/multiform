@@ -111,6 +111,40 @@
   #stepInfo {
     color: var(--primary-color);
   }
+
+  .summary-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .summary-section p:first-child {
+    width: 30%;
+    flex-shrink: 0;
+    border-right: 1px solid var(--secondary-color);
+  }
+  
+  .summary-section p:nth-child(2) {
+    width: 45%;
+    flex-shrink: 0;
+    padding-left: 10px;
+  }
+  
+  .edit-btn {
+    width: 25%;
+    margin-left: auto;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: .7px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  .edit-btn:hover {
+    border: 2px solid var(--primary-color);
+    font-weight: bolder;
+    background-color: transparent;
+  }
   
   @media screen and (max-width: 600px) {
     .form-group {

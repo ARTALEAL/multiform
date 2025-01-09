@@ -1,9 +1,18 @@
-import { validateStep } from "./utils/formValidation.js";
+import { validateStep, setupRealtimeValidation, updateSummaryValues } from "./utils/formValidation.js";
 const stepInfo = document.getElementById("stepInfo");
 const navLeft = document.getElementById("navLeft");
 const navRight = document.getElementById("navRight");
 const form = document.getElementById("myForm");
-const formSteps = ["one", "two", "three"];
+const formSteps = ["one", "two", "three", "four"];
+const editButtons = {
+    "name-edit": 0,
+    "id-edit": 0,
+    "email-edit": 0,
+    "bd-edit": 0,
+    "cv-edit": 1,
+    "dept-edit": 1,
+    "skills-edit": 2
+};
 let currentStep = 0;
 function updateStepVisibility() {
     formSteps.forEach((step) => {
@@ -19,6 +28,9 @@ function updateStepVisibility() {
     if (stepInfo) {
         stepInfo.textContent = `Step ${currentStep + 1} of ${formSteps.length}`;
     }
+    if (currentStep === 3) {
+        updateSummaryValues();
+    }
     if (navLeft) {
         navLeft.style.display = currentStep === 0 ? "none" : "block";
     }
@@ -29,6 +41,7 @@ function updateStepVisibility() {
 document.addEventListener("DOMContentLoaded", () => {
     navLeft ? navLeft.style.display = "none" : null;
     updateStepVisibility();
+    setupRealtimeValidation();
     if (navRight) {
         navRight.addEventListener("click", () => {
             if (currentStep < formSteps.length - 1) {
@@ -46,5 +59,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 updateStepVisibility();
             }
         });
+    }
+    Object.keys(editButtons).forEach((buttonId) => {
+        const button = document.getElementById(buttonId);
+        button.addEventListener("click", () => {
+            currentStep = editButtons[buttonId];
+            updateStepVisibility();
+        });
+    });
+});
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (validateStep(2)) {
+        alert("Форма успешно отправлена!");
+        form.reset();
+        currentStep = 0;
+        updateStepVisibility();
     }
 });

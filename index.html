@@ -51,7 +51,7 @@
             <div class="form-control">
                 <label for="department">Отдел <span style="color: red;">*</span></label>
                 <select id="department" name="department">
-                    <option value="">Отдел выборки</option>
+                    <option value="">Выберите отдел</option>
                     <option value="hr">Отдел персонала</option>
                     <option value="it">ИТ-отдел</option>
                     <option value="finance">Финансовый отдел</option>
@@ -70,6 +70,71 @@
                 <input type="checkbox" name="terms" id="terms">
                 <label for="terms">Я прочитал и ознакомился с условиями <span style="color: red;">*</span></label>
                 <span id="id-error" class="error-message" role="alert"></span>
+            </div>
+        </section>
+
+        <section class="group-four" id="four">
+            <div class="summary-section">
+                <p>Имя: </p>
+                <p id="name-val"></p>
+                <button type="button" class="edit-btn" id="name-edit">
+                    <span>✎</span>
+                    <span>Редактировать</span>
+                </button>
+            </div>
+
+            <div class="summary-section">
+                <p>ID: </p>
+                <p id="id-val"></p>
+                <button type="button" class="edit-btn" id="id-edit">
+                    <span>✎</span>
+                    <span>Редактировать</span>
+                </button>
+            </div>
+
+            <div class="summary-section">
+                <p>Имейл: </p>
+                <p id="email-val"></p>
+                <button type="button" class="edit-btn" id="email-edit">
+                    <span>✎</span>
+                    <span>Редактировать</span>
+                </button>
+            </div>
+
+            <div class="summary-section">
+                <p>День рождения: </p>
+                <p id="bd-val"></p>
+                <button type="button" class="edit-btn" id="bd-edit">
+                    <span>✎</span>
+                    <span>Редактировать</span>
+                </button>
+            </div>
+
+            <div class="summary-section">
+                <p>CV/Резюме: </p>
+                <p id="cv-val"></p>
+                <button type="button" class="edit-btn" id="cv-edit">
+                    <span>✎</span>
+                    <span>Редактировать</span>
+                </button>
+            </div>
+
+            <div class="summary-section">
+                <p>Отдел: </p>
+                <p id="dept-val"></p>
+                <button type="button" class="edit-btn" id="dept-edit">
+                    <span>✎</span>
+                    <span>Редактировать</span>
+                </button>
+            </div>
+
+            <div class="summary-section">
+                <p>Навыки: </p>
+                <p id="skills-val"></p>
+                <button type="button" class="edit-btn" id="skills-edit">
+                    <span>✎</span>
+                    <span>Редактировать</span>
+                </button>
             </div>
 
             <button id="btn" type="submit">Подтвердить и отправить</button>
