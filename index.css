@@ -79,6 +79,38 @@
   #navLeft, #navRight {
     width: fit-content;
   }
+
+  input:focus, select:focus, textarea:focus {
+    outline: .5px solid var(--primary-color);
+  }
+  
+  input.error, select.error, textarea.error {
+    outline: .5px solid red;
+  }
+  
+  .error-message {
+    font-size: x-small;
+    color: red;
+    display: block;
+    margin-top: 2px;
+  }
+  
+  .arrows {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 900;
+  
+  }
+  
+  #navLeft, #navRight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #stepInfo {
+    color: var(--primary-color);
+  }
   
   @media screen and (max-width: 600px) {
     .form-group {
