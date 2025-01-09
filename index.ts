@@ -41,7 +41,7 @@ function updateStepVisibility() {
     }
 
     if (stepInfo) {
-        stepInfo.textContent = `Step ${currentStep + 1} of ${formSteps.length}`;
+        stepInfo.textContent = `Шаг ${currentStep + 1} из ${formSteps.length}`;
     }
     if (currentStep === 3) {
         updateSummaryValues();
