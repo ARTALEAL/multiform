@@ -4,12 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Мультиформа</title>
     <script defer src="./scripts/index.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+    <form id="myForm">
+        <section class="group-one" id="one">
+            <div class="form-group">
+                <div class="form-control">
+                    <label for="name">Имя <span style="color: red;">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя">
+                </div>
 
+                <div class="form-control">
+                    <label for="idNum">Ваш ID <span style="color: red;">*</span></label>
+                    <input type="number" id="idNum" name="idNum" placeholder="Введите ID номер">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-control">
+                    <label for="email">Email <span style="color: red;">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Введите ваш email">
+                </div>
+
+                <div class="form-control">
+                    <label for="birthdate">Дата рождения <span style="color: red;">*</span></label>
+                    <input type="date" id="birthdate" name="birthdate" max="2006-10-01" min="1924-01-01">
+                </div>
+            </div>
+        </section>
+
+        <section class="group-two" id="two">
+            <div class="form-control">
+                <label for="document">Загрузить CV <span style="color: red;">*</span></label>
+                <input type="file" name="document" id="document">
+            </div>
+
+            <div class="form-control">
+                <label for="department">Отдел <span style="color: red;">*</span></label>
+                <select id="department" name="department">
+                    <option value="">Отдел выборки</option>
+                    <option value="hr">Отдел персонала</option>
+                    <option value="it">ИТ-отдел</option>
+                    <option value="finance">Финансовый отдел</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="group-three" id="three">
+            <div class="form-control">
+                <label for="skills">Навыки (не обязательно)</label>
+                <textarea id="skills" name="skills" rows="4" placeholder="Опишите ваши навыки"></textarea>
+            </div>
+
+            <div class="form-control">
+                <input type="checkbox" name="terms" id="terms">
+                <label for="terms">Я прочитал и ознакомился с условиями <span style="color: red;">*</span></label>
+            </div>
+
+            <button id="btn" type="submit">Подтвердить и отправить</button>
+        </section>
+
+        <div class="arrows">
+            <button type="button" id="navLeft">Назад</button>
+            <span id="stepInfo"></span>
+            <button type="button" id="navRight">Вперёд</button>
+        </div>
+    </form>
 </body>
 
 </html>
